@@ -1,0 +1,12 @@
+{
+  "name": "LogistiX Control Tower",
+  "short_name": "LogistiX",
+  "description": "Real-time logistics control tower with live vehicle tracking",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

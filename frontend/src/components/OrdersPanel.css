@@ -1,0 +1,193 @@
+.orders-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.orders-stats {
+  display: flex;
+  gap: 6px;
+}
+
+.stat-mini {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.stat-mini:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+.stat-mini-val { font-size: 18px; font-weight: 800; }
+.stat-mini-label { font-size: 9px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+
+.orders-search-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  pointer-events: none;
+}
+.search-input { padding-left: 32px; }
+
+.orders-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 2px;
+}
+
+/* === Order Card === */
+.order-card {
+  padding: 12px;
+  cursor: pointer;
+  transition: all var(--transition-md);
+  border: 1px solid var(--border);
+}
+.order-card:hover {
+  border-color: var(--accent);
+  background: rgba(249, 115, 22, 0.05);
+  transform: translateX(2px);
+}
+.order-card--delayed {
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  background: rgba(239, 68, 68, 0.04) !important;
+}
+
+.order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.order-card-id {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.order-card-route {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.route-point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.route-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.route-dot--pickup { background: var(--green); box-shadow: 0 0 6px var(--green-glow); }
+.route-dot--delivery { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+
+.route-line {
+  width: 1px;
+  height: 8px;
+  background: var(--border);
+  margin-left: 3.5px;
+}
+
+.order-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* === Modal === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* === Empty State === */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px;
+  color: var(--text-muted);
+}
+.empty-icon { font-size: 32px; opacity: 0.5; }

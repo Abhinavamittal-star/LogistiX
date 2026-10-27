@@ -1,0 +1,15 @@
+.people-panel { display:flex; flex-direction:column; min-height:0; flex:1; }
+.people-tabs { display:flex; gap:6px; padding:10px 12px; border-bottom:1px solid var(--border); }
+.people-tabs button { flex:1; border:1px solid var(--border); border-radius:8px; background:var(--bg-card); color:var(--text-secondary); padding:8px; cursor:pointer; font:600 11px var(--font-sans); }
+.people-tabs button.active { border-color:var(--border-accent); background:rgba(249,115,22,.1); color:var(--accent-light); }
+.people-tabs span { margin-left:4px; opacity:.75; }
+.people-list { overflow:auto; display:flex; flex-direction:column; gap:8px; padding:10px; }
+.people-card { padding:12px; }
+.people-card-heading { display:flex; align-items:center; gap:10px; }
+.people-avatar { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; }
+.people-avatar.driver { background:rgba(59,130,246,.16); color:var(--blue-light); }
+.people-avatar.customer { background:rgba(34,197,94,.14); color:var(--green); }
+.people-name { min-width:0; display:flex; flex-direction:column; }
+.people-name strong { font-size:12px; }
+.people-name small { color:var(--text-muted); overflow:hidden; text-overflow:ellipsis; }
+.people-meta { display:flex; justify-content:space-between; gap:8px; margin:9px 0 0 44px; color:var(--text-muted); font-size:10px; }

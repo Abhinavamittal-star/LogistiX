@@ -1,0 +1,60 @@
+.optimizer-panel { display: flex; flex-direction: column; gap: 14px; height: 100%; overflow-y: auto; }
+.optimizer-intro { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+.optimizer-section { display: flex; flex-direction: column; gap: 8px; }
+.optimizer-section-header { display: flex; align-items: center; justify-content: space-between; }
+.optimizer-list { display: flex; flex-direction: column; gap: 4px; max-height: 160px; overflow-y: auto; }
+
+.optimizer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--bg-card);
+}
+.optimizer-item:hover { border-color: var(--accent); }
+.optimizer-item.selected { border-color: var(--accent); background: rgba(249,115,22,0.08); }
+.vehicle-color-mini { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+.optimizer-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.results-header { font-size: 13px; font-weight: 700; color: var(--accent); }
+.results-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 8px;
+}
+.result-stat { text-align: center; }
+.result-val { font-size: 20px; font-weight: 800; }
+.result-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
+.result-arrow { font-size: 18px; color: var(--text-muted); }
+
+.result-assignments { display: flex; flex-direction: column; gap: 8px; }
+.assignment-card { background: var(--bg-surface); border-radius: var(--radius); padding: 10px; border: 1px solid var(--border); }
+.assignment-header { margin-bottom: 6px; }
+.assignment-orders { display: flex; flex-direction: column; gap: 4px; }
+.assignment-order { display: flex; align-items: center; gap: 8px; }
+.assignment-seq {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

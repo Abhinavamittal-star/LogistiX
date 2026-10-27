@@ -1,0 +1,118 @@
+/* === Vehicle Markers === */
+.vehicle-marker {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-pulse {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: vehicle-pulse 2s ease-out infinite;
+}
+
+@keyframes vehicle-pulse {
+  0% { transform: scale(0.5); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.vehicle-icon {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 8px var(--vehicle-color, #f97316));
+}
+
+.vehicle-icon:hover { transform: scale(1.15) !important; }
+
+.vehicle-label {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 9px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+/* === Delivery Pin Popup === */
+.lx-popup .maplibregl-popup-content {
+  color: var(--text-primary) !important;
+}
+
+/* === Map Overlay Badge === */
+.map-overlay-badge {
+  position: absolute;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.map-status {
+  position: absolute;
+  z-index: 12;
+  top: 88px;
+  right: 16px;
+  max-width: min(360px, calc(100% - 32px));
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.map-fit-button {
+  position: absolute;
+  z-index: 10;
+  top: 88px;
+  right: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, .92);
+  color: var(--text-primary);
+  font: 600 11px var(--font-sans);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.map-fit-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.map-status-error {
+  align-items: flex-start;
+  flex-direction: column;
+  color: var(--text-primary);
+}
+
+.map-status-error small {
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}

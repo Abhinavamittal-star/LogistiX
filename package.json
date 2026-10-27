@@ -1,0 +1,21 @@
+{
+  "name": "logistics-control-tower",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["backend", "frontend", "simulator"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\" \"npm run dev --workspace=simulator\"",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:simulator": "npm run dev --workspace=simulator",
+    "install:all": "npm install",
+    "test": "npm run test --workspace=backend",
+    "lint": "eslint backend/src frontend/src simulator --ext .js,.jsx"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0"
+  }
+}

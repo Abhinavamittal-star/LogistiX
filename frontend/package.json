@@ -1,0 +1,29 @@
+{
+  "name": "logistics-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@deck.gl/core": "9.0.6",
+    "@deck.gl/extensions": "9.0.6",
+    "@deck.gl/geo-layers": "9.0.6",
+    "@deck.gl/layers": "9.0.6",
+    "@deck.gl/mapbox": "9.0.6",
+    "@deck.gl/mesh-layers": "9.0.6",
+    "axios": "^1.6.2",
+    "maplibre-gl": "^6.16.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.18.4",
+    "socket.io-client": "^4.6.2",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  }
+}
