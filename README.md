@@ -26,6 +26,7 @@ This guide covers what the application does, how its parts fit together, how to 
 - [Data model overview](#data-model-overview)
 - [Optimization, geofences, and playback](#optimization-geofences-and-playback)
 - [Security and deployment notes](#security-and-deployment-notes)
+- [Deploy both services on Railway](#deploy-both-services-on-railway)
 - [Troubleshooting](#troubleshooting)
 - [Validation commands](#validation-commands)
 - [Known demo limitations](#known-demo-limitations)
@@ -516,6 +517,64 @@ Vehicle tracking stores recent trails and a bounded position history. The dispat
 `render.yaml` provides a Render service blueprint. Configure the Mongo URI, JWT secrets, origins, and any simulator secret as private service environment variables in the hosting provider. The backend health check is `/api/health`. The frontend is a static Vite build and can be hosted on a static frontend provider.
 
 The current app is a project/demo implementation. A public launch requires additional operational hardening, observability, policy review, production data retention decisions, backups, and load testing.
+
+## Deploy both services on Railway
+
+The repository includes Railway configuration for two services built from the same GitHub repository:
+
+- **API service:** Express, Socket.IO, and MongoDB connection (`backend/railway.toml`).
+- **Frontend service:** Vite production build served as a single-page application (`frontend/railway.toml`, `frontend/server.js`).
+
+### 1. Create the API service
+
+1. In Railway, create a project and choose **Deploy from GitHub repo**.
+2. Select `Abhinavamittal-star/LogistiX`.
+3. Keep **Root Directory** set to the repository root (`/`) so npm can install the monorepo workspaces.
+4. Set the Railway configuration file path to `/backend/railway.toml`.
+5. Add these variables in the API service's private **Variables** settings:
+
+   | Variable | Value |
+   |---|---|
+   | `NODE_ENV` | `production` |
+   | `DEMO_MODE` | `false` |
+   | `MONGO_URI` | Your MongoDB connection string |
+   | `JWT_SECRET` | A new, randomly generated secret |
+   | `JWT_REFRESH_SECRET` | A different new, randomly generated secret |
+   | `FRONTEND_URL` | The deployed frontend origin; fill this in after step 2 |
+   | `DISPATCHER_REGISTRATION_CODE` | Optional temporary code if new dispatchers need self-registration |
+   | `SIMULATOR_TOKEN` | Optional; configure only if deploying a simulator |
+
+   Do not add a `PORT` variable; Railway provides it. Do not copy secrets from local `.env` files into GitHub, README, or chat.
+
+6. Deploy the service and wait for its health check at `/api/health` to pass.
+7. In the API service's **Networking** settings, generate a public domain and copy its origin, for example `https://your-api-service.up.railway.app`.
+
+### 2. Create the frontend service
+
+1. Add another service from the same GitHub repository.
+2. Keep **Root Directory** set to the repository root (`/`) so the frontend workspace can use the root lockfile.
+3. Set the Railway configuration file path to `/frontend/railway.toml`.
+4. Add build-time variables to the frontend service:
+
+   | Variable | Value |
+   |---|---|
+   | `VITE_API_URL` | `https://your-api-service.up.railway.app/api` |
+   | `VITE_SOCKET_URL` | `https://your-api-service.up.railway.app` |
+
+   Replace the example hostname with the API's actual public domain from step 1. Vite embeds `VITE_` variables into the generated browser bundle, so these URLs are public configuration and must never contain secrets.
+
+5. Deploy the frontend service and generate a public domain in **Networking**.
+6. Set the API service's `FRONTEND_URL` to the frontend origin, such as `https://your-frontend-service.up.railway.app`, then redeploy the API. This origin must match the browser URL exactly and must not include a path.
+
+### 3. Verify deployment
+
+- Open the frontend public domain and sign in.
+- Open `https://your-api-service.up.railway.app/api/health`; expect status `ok` and storage mode `mongodb`.
+- Confirm the dispatcher dashboard shows **LIVE OPERATIONS** for a MongoDB-backed dispatcher.
+- Open browser developer tools and check that REST requests and the Socket.IO connection use the API's public HTTPS domain.
+- Test demo accounts separately; they should show **DEMO · MEMORY ONLY** and remain isolated from MongoDB-backed records.
+
+The frontend Railway service serves built files and provides SPA fallback for routes such as `/dashboard`, `/driver`, and `/customer`. API and Socket.IO traffic go directly to the API service. The simulator is not deployed by these two service definitions; it can remain local or be deployed separately if needed for simulated vehicle motion.
 
 ## Troubleshooting
 
