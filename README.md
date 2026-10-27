@@ -153,21 +153,21 @@ The browser clears operational state and recreates its socket when the signed-in
 
 ## Live account access for the presentation
 
-Use the MongoDB-backed accounts to demonstrate the live workspace. Keep their email addresses, passwords, and any dispatcher registration code in a password manager or a separate handout shared privately with your instructor. Do not place active credentials in this README or in a public repository.
+Use the MongoDB-backed accounts to demonstrate the live workspace.
 
 | Account role | Sign-in details |
 |---|---|
-| Driver | Share email and password privately |
-| Customer | Share email and password privately |
-| Dispatcher | Share email and password privately |
+| Driver | abhinavamittal@gmail.com  123456|
+| Customer |abhinava.25bcs10721@gmail.com 123456|
+| Dispatcher | dispatcher@gmail.com 1234567890123|
 
-The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in. Remove or rotate that code after account setup. If preparing a local-only credential handout, keep it outside version control and verify it is excluded before committing or publishing the project.
+The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in.
 
 ## Roles and presentation walkthrough
 
 ### Using existing live accounts
 
-These accounts use MongoDB when the backend is configured for MongoDB and the dispatcher dashboard should display **LIVE OPERATIONS**. Do not copy active account emails, passwords, or registration codes into this README or other public files.
+These accounts use MongoDB when the backend is configured for MongoDB and the dispatcher dashboard should display **LIVE OPERATIONS**. 
 
 If a login shows **DEMO ? MEMORY ONLY**, sign out and make sure you are using the intended MongoDB-backed account rather than one of the built-in demo identities.
 
