@@ -157,6 +157,12 @@ Use the MongoDB-backed accounts to demonstrate the live workspace. Keep their em
 
 | Account role | Sign-in details |
 |---|---|
+| Driver | abhinavamittal@gmail.com  123456|
+| Customer |abhinava.25bcs10721@gmail.com 123456|
+| Dispatcher | dispatcher@gmail.com 1234567890123|
+
+| Account role | Sign-in details |
+|---|---|
 | Driver | Share email and password privately |
 | Customer | Share email and password privately |
 | Dispatcher | Share email and password privately |
