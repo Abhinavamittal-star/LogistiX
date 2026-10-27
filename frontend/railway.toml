@@ -1,9 +1,9 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "npm install && npm run build --workspace=frontend"
+buildCommand = "npm install --include=dev && npm run build"
 
 [deploy]
-startCommand = "node frontend/server.js"
+startCommand = "node server.js"
 healthcheckPath = "/"
 healthcheckTimeout = 120
 restartPolicyType = "ON_FAILURE"

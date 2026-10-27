@@ -528,7 +528,7 @@ The repository includes Railway configuration for two services built from the sa
 
 1. In Railway, create a project and choose **Deploy from GitHub repo**.
 2. Select `Abhinavamittal-star/LogistiX`.
-3. Keep **Root Directory** set to the repository root (`/`) so npm can install the monorepo workspaces.
+3. Set **Root Directory** to `/backend`. This makes Railway install and run the backend package directly, rather than trying to run a workspace command from inside a single package.
 4. Set the Railway configuration file path to `/backend/railway.toml`.
 5. Add these variables in the API service's private **Variables** settings:
 
@@ -551,7 +551,7 @@ The repository includes Railway configuration for two services built from the sa
 ### 2. Create the frontend service
 
 1. Add another service from the same GitHub repository.
-2. Keep **Root Directory** set to the repository root (`/`) so the frontend workspace can use the root lockfile.
+2. Set **Root Directory** to `/frontend`. This makes Railway build the frontend package directly.
 3. Set the Railway configuration file path to `/frontend/railway.toml`.
 4. Add build-time variables to the frontend service:
 
