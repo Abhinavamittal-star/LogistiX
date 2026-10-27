@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import * as maplibregl from 'maplibre-gl';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import useStore from '../store';
 import './Map3D.css';
 
 const MAP_STYLE = 'https://tiles.openfreemap.org/styles/dark';
+
+maplibregl.setWorkerUrl(maplibreWorkerUrl);
 
 export default function Map3D({ onMapReady }) {
   const mapContainer = useRef(null);
