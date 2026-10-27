@@ -167,7 +167,7 @@ The dispatcher registration code is only needed when registering a new dispatche
 
 ### Using existing live accounts
 
-Sign in using the live account credentials shared privately with the instructor. These accounts use MongoDB when the backend is configured for MongoDB and the dispatcher dashboard should display **LIVE OPERATIONS**. Do not copy active account emails, passwords, or registration codes into this README or other public files.
+These accounts use MongoDB when the backend is configured for MongoDB and the dispatcher dashboard should display **LIVE OPERATIONS**. Do not copy active account emails, passwords, or registration codes into this README or other public files.
 
 If a login shows **DEMO ? MEMORY ONLY**, sign out and make sure you are using the intended MongoDB-backed account rather than one of the built-in demo identities.
 
