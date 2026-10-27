@@ -158,8 +158,8 @@ Use the MongoDB-backed accounts to demonstrate the live workspace. Keep their em
 |---|---|
 | Driver | abhinavamittal@gmail.com  123456|
 | Customer |abhinava.25bcs10721@gmail.com 123456|
-| Dispatcher | 2025eb01808@online.bits-pilani.ac.in 1234567890123
-DISPATCHER_REGISTRATION_CODE=t3Jo97-dPSa-DRiNjdofn4UpkzP0x1I4Vwcx-Q5MdLE|
+| Dispatcher | 2025eb01808@online.bits-pilani.ac.in 1234567890123|
+| DISPATCHER_REGISTRATION_CODE | t3Jo97-dPSa-DRiNjdofn4UpkzP0x1I4Vwcx-Q5MdLE|
 
 The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in. Remove or rotate that code after account setup. If preparing a local-only credential handout, keep it outside version control and verify it is excluded before committing or publishing the project.
 
