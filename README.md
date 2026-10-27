@@ -157,12 +157,11 @@ Use the MongoDB-backed accounts to demonstrate the live workspace. Keep their em
 
 | Account role | Sign-in details |
 |---|---|
-| Driver | abhinavamittal@gmail.com  123456|
-| Customer |abhinava.25bcs10721@gmail.com 123456|
-| Dispatcher | 2025eb01808@online.bits-pilani.ac.in 1234567890123|
-| DISPATCHER_REGISTRATION_CODE | t3Jo97-dPSa-DRiNjdofn4UpkzP0x1I4Vwcx-Q5MdLE|
+| Driver | Share email and password privately |
+| Customer | Share email and password privately |
+| Dispatcher | Share email and password privately |
 
-The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in. 
+The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in. Remove or rotate that code after account setup. If preparing a local-only credential handout, keep it outside version control and verify it is excluded before committing or publishing the project.
 
 ## Roles and presentation walkthrough
 
