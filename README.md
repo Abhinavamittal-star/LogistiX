@@ -167,18 +167,9 @@ The dispatcher registration code is only needed when registering a new dispatche
 
 ### Using existing live accounts
 
-The live accounts you have already registered are MongoDB-backed accounts. Sign in with each account's email and password through the normal login page and confirm the dispatcher dashboard displays **LIVE OPERATIONS**.
+Sign in using the live account credentials shared privately with the instructor. These accounts use MongoDB when the backend is configured for MongoDB and the dispatcher dashboard should display **LIVE OPERATIONS**. Do not copy active account emails, passwords, or registration codes into this README or other public files.
 
-| Account role | Sign-in details |
-|---|---|
-| Driver | abhinavamittal@gmail.com  123456|
-| Customer |abhinava.25bcs10721@gmail.com 123456|
-| Dispatcher | 2025eb01808@online.bits-pilani.ac.in 1234567890123|
-| DISPATCHER_REGISTRATION_CODE | t3Jo97-dPSa-DRiNjdofn4UpkzP0x1I4Vwcx-Q5MdLE|
-
-The dispatcher registration code is only needed when registering a new dispatcher; it is not part of dispatcher sign-in. 
-
-If a login shows **DEMO · MEMORY ONLY**, sign out and make sure you are using the intended MongoDB-backed account rather than one of the built-in demo identities.
+If a login shows **DEMO ? MEMORY ONLY**, sign out and make sure you are using the intended MongoDB-backed account rather than one of the built-in demo identities.
 
 ### Built-in demo accounts
 
